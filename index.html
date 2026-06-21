@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal · HR Brief by Mentour · Edición 01 · Junio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#312182;--gold:#E5AD3E;--blue2:#2A4C79;--bg:#FAFAF8;--card:#FFFFFF;--border:#E8E6E0;--text:#1A1A1A;--text2:#555550;--text3:#999993;--r:12px;--rs:8px;--max:660px}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px 60px}
+/* HEADER */
+.header{text-align:center;padding:48px 24px 36px;border-bottom:1px solid var(--border)}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px}
+.logo-m{width:30px;height:30px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.logo-m span{color:white;font-size:12px;font-weight:600}
+.logo-name{font-size:12px;font-weight:500;color:var(--blue);letter-spacing:.1em;text-transform:uppercase}
+.signal-title{font-size:52px;font-weight:300;color:var(--text);letter-spacing:-.02em;line-height:1;margin-bottom:4px}
+.signal-sub1{font-size:13px;font-weight:500;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.signal-sub2{font-size:14px;color:var(--text3);margin-bottom:20px}
+.meta-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.meta-item{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:5px}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.lang-toggle{display:inline-flex;background:#F0EEE8;border-radius:100px;padding:3px;gap:2px}
+.lang-btn{font-size:12px;font-weight:500;padding:5px 16px;border-radius:100px;border:none;cursor:pointer;background:transparent;color:var(--text3);transition:all .15s;font-family:inherit}
+.lang-btn.active{background:var(--blue);color:white}
+/* EDITORIAL */
+.editorial{padding:24px;border-bottom:1px solid var(--border)}
+.ed-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.ed-text{font-size:14px;color:var(--text2);line-height:1.75}
+/* SECTION */
+.sec{padding:32px 0 0}
+.sec-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:0 24px}
+.sec-num{width:34px;height:34px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.sn-1{background:#EAF0FB;color:#1A3A8F}
+.sn-2{background:#E4F4EE;color:#0A5438}
+.sn-3{background:#FBF3E0;color:#7A4A00}
+.sn-4{background:#EDEAFB;color:#3D2BA0}
+.sn-5{background:#E8F5E4;color:#27500A}
+.sec-name{font-size:17px;font-weight:500;color:var(--text)}
+/* FEATURED ARTICLE */
+.art-feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:0 24px 10px}
+.art-bar{height:4px}
+.bar-1{background:var(--blue)}.bar-2{background:#0F6E56}.bar-3{background:#B87A00}.bar-4{background:#5040B0}.bar-5{background:#2D7A1E}
+.art-body{padding:18px 20px}
+.art-tag{font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px}
+.tc-1{color:#1A3A8F}.tc-2{color:#0A5438}.tc-3{color:#7A4A00}.tc-4{color:#3D2BA0}.tc-5{color:#27500A}
+.art-h{font-size:17px;font-weight:500;line-height:1.4;color:var(--text);margin-bottom:8px}
+.art-p{font-size:13px;color:var(--text2);line-height:1.72;margin-bottom:14px}
+.art-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.art-src{font-size:11px;color:var(--text3)}
+.art-link{font-size:12px;font-weight:500;color:var(--blue);text-decoration:none;display:flex;align-items:center;gap:3px;border:1px solid var(--border);padding:4px 10px;border-radius:100px}
+.art-link:hover{background:#EAF0FB}
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 24px 10px}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
+.art-sm{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:6px}
+.art-sm-h{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
+.art-sm-p{font-size:12px;color:var(--text2);line-height:1.6;flex:1}
+.art-sm-foot{display:flex;align-items:center;justify-content:space-between;margin-top:2px}
+.art-sm-src{font-size:11px;color:var(--text3)}
+.art-sm-link{font-size:12px;color:var(--blue);text-decoration:none;font-weight:500}
+/* REFLECTION */
+.refl{background:#FAFAF8;border:1px solid var(--border);border-left:3px solid var(--gold);padding:14px 18px;margin:0 24px 28px;border-radius:0 var(--r) var(--r) 0}
+.refl-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.rl-reflexiona{color:#B87A00}
+.rl-practica{color:#0A5438}
+.rl-equipo{color:#3D2BA0}
+.refl-q{font-size:13px;color:var(--text2);line-height:1.7;font-style:italic}
+.div{height:1px;background:var(--border);margin:0 24px}
+/* FOOTER */
+.footer{text-align:center;padding:36px 24px 0;border-top:1px solid var(--border);margin-top:36px}
+.footer-bar{width:32px;height:3px;background:var(--gold);margin:0 auto 14px}
+.footer-signal{font-size:22px;font-weight:300;letter-spacing:.02em;color:var(--blue);margin-bottom:2px}
+.footer-by{font-size:11px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.footer-text{font-size:13px;color:var(--text3);line-height:1.7;max-width:380px;margin:0 auto 14px}
+.footer-cta{display:inline-block;background:var(--blue);color:white;font-size:13px;font-weight:500;padding:9px 22px;border-radius:100px;text-decoration:none;margin-bottom:14px}
+.footer-links{font-size:12px;color:var(--text3);margin-bottom:10px}
+.footer-links a{color:var(--blue);text-decoration:none;margin:0 8px}
+.unsub{font-size:11px;color:var(--text3);margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-row">
+    <div class="logo-m"><span>M</span></div>
+    <span class="logo-name">Mentour Consulting</span>
+  </div>
+  <div class="signal-title" id="h-title">Signal</div>
+  <div class="signal-sub1" id="h-sub1">HR Brief by Mentour</div>
+  <div class="signal-sub2" id="h-sub2">Ideas que acompañan a quienes lideran personas</div>
+  <div class="meta-row">
+    <span class="meta-item"><span class="dot"></span><span id="h-ed">Edición 01 · Junio 2026</span></span>
+    <span class="meta-item"><span class="dot"></span><span id="h-read">8 min de lectura</span></span>
+    <span class="meta-item"><span class="dot"></span><span id="h-art">10 artículos curados</span></span>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- EDITORIAL -->
+<div class="editorial">
+  <div class="ed-label" id="i-label">Editorial</div>
+  <div class="ed-text" id="i-text">En Mentour lo vemos en cada organización que acompañamos: el problema rara vez está en la estrategia. Está en la capa que la ejecuta. Esta edición llega con datos que lo confirman a escala global: el engagement cayó a su nivel más bajo desde 2020, y el quiebre no ocurrió en los equipos — ocurrió en los managers. Al mismo tiempo, la IA lleva dos años en las empresas y el 88% de los colaboradores dice que nada ha cambiado en su trabajo. No porque la tecnología falle, sino porque los líderes no han rediseñado cómo trabajan. En Signal buscamos ser más que una fuente de información — queremos ser la pregunta que cambia cómo lideras esta semana.</div>
+</div>
+
+<!-- S1 -->
+<div class="sec">
+  <div class="sec-header">
+    <div class="sec-num sn-1">01</div>
+    <div class="sec-name" id="s1n">Liderazgo y cultura</div>
+  </div>
+  <div class="art-feat">
+    <div class="art-bar bar-1"></div>
+    <div class="art-body">
+      <div class="art-tag tc-1" id="s1t1">Destacado · Gallup 2026</div>
+      <div class="art-h" id="s1h1">El engagement global cayó al 20% — y el quiebre está en los managers, no en los equipos</div>
+      <div class="art-p" id="s1p1">El State of the Global Workplace 2026 de Gallup es contundente: el engagement llegó a su punto más bajo desde 2020 y le cuesta a la economía global $10 billones en productividad perdida. Pero el dato que más debe preocupar a un Director de GH no es el 20% — es que el engagement de los managers cayó de 31% en 2022 a 22% en 2025. Cuando el manager se apaga, el equipo lo siente primero. Y cuando el 78% de los managers no están comprometidos, ningún programa de cultura va a funcionar.</div>
+      <div class="art-foot">
+        <span class="art-src" id="s1s1">Gallup · State of the Global Workplace 2026</span>
+        <a class="art-link" href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank"><span id="s1c1">Leer más</span> ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="art-sm">
+      <div class="art-tag tc-1" id="s1t2">Josh Bersin · Jun 2026</div>
+      <div class="art-sm-h" id="s1h2">HR 2030: el rol de GH ya no es administrar personas — es orquestar agentes, humanos e IA</div>
+      <div class="art-sm-p" id="s1p2">Bersin lanzó en Irresistible 2026 su visión HR 2030: en un mundo de Superagentes, GH se convierte en el arquitecto del sistema de trabajo. Las organizaciones que no rediseñen GH en los próximos 3 años quedarán estructuralmente rezagadas.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">joshbersin.com · Jun 2026</span><a class="art-sm-link" href="https://joshbersin.com/2026/06/the-josh-bersin-institute-hr-2030-and-the-global-hr-excellence-certification/" target="_blank">↗</a></div>
+    </div>
+    <div class="art-sm">
+      <div class="art-tag tc-1" id="s1t3">HBR · May-Jun 2026</div>
+      <div class="art-sm-h" id="s1h3">Cómo construir un superequipo que mejora continuamente — y no se detiene cuando todo va bien</div>
+      <div class="art-sm-p" id="s1p3">Investigación con miles de equipos revela el patrón de los de alto desempeño: sus líderes fomentan la experimentación incluso cuando las cosas van bien. La curiosidad no es un rasgo de personalidad — es una práctica deliberada que se puede entrenar.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">HBR · May 2026</span><a class="art-sm-link" href="https://hbr.org/2026/05/how-to-build-a-superteam-that-keeps-getting-better" target="_blank">↗</a></div>
+    </div>
+  </div>
+  <div class="refl">
+    <div class="refl-label rl-reflexiona" id="s1rl">Reflexiona</div>
+    <div class="refl-q" id="s1rq">¿En tu organización los managers reciben el mismo nivel de inversión en desarrollo que se les pide dar a sus equipos — o les exiges que den lo que nadie les ha dado a ellos?</div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- S2 -->
+<div class="sec">
+  <div class="sec-header">
+    <div class="sec-num sn-2">02</div>
+    <div class="sec-name" id="s2n">Coaching ejecutivo y de equipos</div>
+  </div>
+  <div class="art-feat">
+    <div class="art-bar bar-2"></div>
+    <div class="art-body">
+      <div class="art-tag tc-2" id="s2t1">Destacado · Gallup 2026</div>
+      <div class="art-h" id="s2h1">Cuando un manager tiene a alguien que activamente impulsa su desarrollo, su bienestar salta del 28% al 50%</div>
+      <div class="art-p" id="s2p1">El dato más revelador del reporte Gallup 2026: el entrenamiento solo lleva el bienestar del manager del 28% al 34%. Pero cuando hay alguien que genuinamente los acompaña en su desarrollo, ese número llega al 50%. El coaching ejecutivo no es un beneficio — es el multiplicador de toda la estrategia de personas.</div>
+      <div class="art-foot">
+        <span class="art-src" id="s2s1">Gallup · State of the Global Workplace 2026</span>
+        <a class="art-link" href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank"><span id="s2c1">Leer más</span> ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="art-sm">
+      <div class="art-tag tc-2" id="s2t2">Josh Bersin · Feb 2026</div>
+      <div class="art-sm-h" id="s2h2">El liderazgo se desacopló de la jerarquía — los empleados optan por entrar cada día, no firman una vez</div>
+      <div class="art-sm-p" id="s2p2">Bersin describe el cambio más profundo en 50 años: ya no puedes decirle a la gente que haga algo y esperar que lo haga. El liderazgo efectivo hoy requiere que las personas elijan seguirte cada día. Eso cambia radicalmente cómo se desarrollan líderes.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">joshbersin.com · Feb 2026</span><a class="art-sm-link" href="https://joshbersin.com/2026/02/the-world-is-accelerating-what-have-we-learned-about-leadership/" target="_blank">↗</a></div>
+    </div>
+    <div class="art-sm">
+      <div class="art-tag tc-2" id="s2t3">McKinsey · 2026</div>
+      <div class="art-sm-h" id="s2h3">Las organizaciones con mejores prácticas de management generan 21 veces más retorno para el accionista</div>
+      <div class="art-sm-p" id="s2p3">McKinsey confirma lo que los coaches sabemos desde hace años: las empresas en el top 25% de prácticas de gestión de personas multiplican su retorno frente a las del bottom 25%. Liderar bien es una ventaja competitiva medible.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">McKinsey People Leadership Edge · 2026</span><a class="art-sm-link" href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/how-we-help-clients/leadership" target="_blank">↗</a></div>
+    </div>
+  </div>
+  <div class="refl">
+    <div class="refl-label rl-practica" id="s2rl">Ponlo en práctica</div>
+    <div class="refl-q" id="s2rq">Esta semana, elige un manager de tu equipo y agenda 30 minutos sin agenda fija — solo para preguntarle cómo está, qué lo está frenando y qué necesita. No para resolver, sino para acompañar. Esa conversación vale más que cualquier programa de desarrollo.</div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- S3 -->
+<div class="sec">
+  <div class="sec-header">
+    <div class="sec-num sn-3">03</div>
+    <div class="sec-name" id="s3n">Inteligencia emocional y bienestar</div>
+  </div>
+  <div class="art-feat">
+    <div class="art-bar bar-3"></div>
+    <div class="art-body">
+      <div class="art-tag tc-3" id="s3t1">Destacado · Gallup 2026</div>
+      <div class="art-h" id="s3h1">Los líderes tienen más estrés, más ira, más tristeza y más soledad que el resto — y casi nadie lo sabe</div>
+      <div class="art-p" id="s3p1">Gallup 2026 revela una paradoja inquietante: los líderes tienen mayor engagement pero también experimentan más emociones negativas que cualquier otro rol. Más estrés (+7%), más ira (+12%), más tristeza (+11%), más soledad (+10%). La carga emocional del liderazgo es real, silenciosa, y está siendo completamente ignorada por la mayoría de las estrategias de bienestar organizacional.</div>
+      <div class="art-foot">
+        <span class="art-src" id="s3s1">Gallup · State of the Global Workplace 2026</span>
+        <a class="art-link" href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank"><span id="s3c1">Leer más</span> ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="art-sm">
+      <div class="art-tag tc-3" id="s3t2">Susan David · HBR</div>
+      <div class="art-sm-h" id="s3h2">La agilidad emocional no es ser positivo — es usar las emociones en lugar de ser usado por ellas</div>
+      <div class="art-sm-p" id="s3p2">Susan David redefine la IE para el liderazgo: no se trata de controlar lo que sientes, sino de detectar, entender y usar esa información para actuar desde tus valores. Los líderes más resilientes no tienen menos emociones — las tienen más presentes.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">susandavid.com · HBR</span><a class="art-sm-link" href="https://www.susandavid.com" target="_blank">↗</a></div>
+    </div>
+    <div class="art-sm">
+      <div class="art-tag tc-3" id="s3t3">NLI · 2026</div>
+      <div class="art-sm-h" id="s3h3">La IA sycophant y el ejecutivo abrumado: la tormenta perfecta para el liderazgo tóxico</div>
+      <div class="art-sm-p" id="s3p3">David Rock alerta: combinar líderes sobrecargados con IAs que les dicen lo que quieren escuchar está creando condiciones para decisiones egocéntricas y cultura tóxica. La autoconsciencia emocional nunca fue tan crítica como ahora.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">neuroleadership.com · 2026</span><a class="art-sm-link" href="https://www.neuroleadership.com/" target="_blank">↗</a></div>
+    </div>
+  </div>
+  <div class="refl">
+    <div class="refl-label rl-reflexiona" id="s3rl">Reflexiona</div>
+    <div class="refl-q" id="s3rq">¿Qué emoción estás cargando sola o solo esta semana como líder — y qué pasaría si la nombraras con tu equipo o con alguien de confianza?</div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- S4 -->
+<div class="sec">
+  <div class="sec-header">
+    <div class="sec-num sn-4">04</div>
+    <div class="sec-name" id="s4n">HR Tech</div>
+  </div>
+  <div class="art-feat">
+    <div class="art-bar bar-4"></div>
+    <div class="art-body">
+      <div class="art-tag tc-4" id="s4t1">Destacado · SHRM 2026</div>
+      <div class="art-h" id="s4h1">Solo el 46% de las organizaciones usa IA en GH — pero el 92% de los CHROs dice que la integración aumentará este año</div>
+      <div class="art-p" id="s4p1">El State of AI in HR 2026 de SHRM revela la brecha entre intención y realidad. El hallazgo más relevante: la IA tiene 5.7 veces más probabilidad de transformar responsabilidades que de eliminar empleos. El riesgo no es la desaparición de roles — es la obsolescencia de los líderes que no sepan rediseñar cómo trabajan sus equipos.</div>
+      <div class="art-foot">
+        <span class="art-src" id="s4s1">SHRM · State of AI in HR 2026</span>
+        <a class="art-link" href="https://www.shrm.org/topics-tools/research/state-of-ai-hr-2026/full-report" target="_blank"><span id="s4c1">Leer más</span> ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="art-sm">
+      <div class="art-tag tc-4" id="s4t2">SHRM · Jun 2026</div>
+      <div class="art-sm-h" id="s4h2">El Congreso de EE.UU. propone la primera ley federal de IA en el trabajo — lo que los líderes de GH necesitan saber</div>
+      <div class="art-sm-p" id="s4p2">La "Great American AI Act of 2026" busca crear un marco nacional de gobernanza de IA. Para GH en Colombia y Latam: la señal es clara — la regulación de IA en el trabajo ya no es opcional.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">SHRM · Jun 2026</span><a class="art-sm-link" href="https://www.shrm.org/in/topics-tools/news/what-hr-needs-to-know-about-great-american-ai-act-of-2026" target="_blank">↗</a></div>
+    </div>
+    <div class="art-sm">
+      <div class="art-tag tc-4" id="s4t3">NLI · 2026</div>
+      <div class="art-sm-h" id="s4h3">Los cuatro tipos de usuario de IA — y por qué la fluencia en IA ya es una competencia de liderazgo</div>
+      <div class="art-sm-p" id="s4p3">El NLI identifica cuatro perfiles: resistores, ambivalentes, usuarios generales y fluentes en IA. Las organizaciones que van a ganar son las que conviertan a sus líderes en fluentes — no en usuarios pasivos. Ese es un reto de desarrollo, no de tecnología.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">neuroleadership.com · 2026</span><a class="art-sm-link" href="https://neuroleadership.com/?p=t" target="_blank">↗</a></div>
+    </div>
+  </div>
+  <div class="refl">
+    <div class="refl-label rl-equipo" id="s4rl">Para conversar con tu equipo</div>
+    <div class="refl-q" id="s4rq">En tu próxima reunión de equipo, pide a cada persona que se identifique con uno de los cuatro perfiles del NLI: resistor, ambivalente, usuario general o fluente en IA. Luego pregunta: ¿qué necesitaríamos como equipo para movernos todos un nivel hacia adelante? La conversación que sigue suele ser más reveladora que cualquier diagnóstico externo.</div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- S5 -->
+<div class="sec">
+  <div class="sec-header">
+    <div class="sec-num sn-5">05</div>
+    <div class="sec-name" id="s5n">Behavioral Lab</div>
+  </div>
+  <div class="art-feat">
+    <div class="art-bar bar-5"></div>
+    <div class="art-body">
+      <div class="art-tag tc-5" id="s5t1">Destacado · The Decision Lab + Stanford GSB</div>
+      <div class="art-h" id="s5h1">La estrategia no falla por la idea — falla porque el lunes por la mañana el hábito gana siempre</div>
+      <div class="art-p" id="s5p1">The Decision Lab lo documenta con precisión: cuando una nueva plataforma entra en producción, los mejores colaboradores vuelven al flujo de trabajo anterior porque es más rápido cuando el teléfono no para. La estrategia no falló — el entorno humano ganó. Stanford GSB refuerza el punto: el liderazgo efectivo no se mide por la personalidad sino por los comportamientos que se repiten, visiblemente, bajo presión. Cambiar cultura es cambiar lo que es fácil, familiar y socialmente seguro.</div>
+      <div class="art-foot">
+        <span class="art-src" id="s5s1">The Decision Lab · Stanford GSB · 2026</span>
+        <a class="art-link" href="https://thedecisionlab.com/big-problems/rethinking-change-management-through-behavioral-science" target="_blank"><span id="s5c1">Leer más</span> ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="art-sm">
+      <div class="art-tag tc-5" id="s5t2">NLI · Ene 2026</div>
+      <div class="art-sm-h" id="s5h2">Tres grandes cambios de liderazgo para 2026 vistos desde la neurociencia — y el cerebro que no cambia</div>
+      <div class="art-sm-p" id="s5p2">El NLI analizó 10.000 fuentes diarias para identificar las señales que realmente importan. La conclusión: el mundo cambia, pero el hardware biológico no. Los líderes que ignoran cómo procesa el cerebro la incertidumbre pierden sus mejores estrategias.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">neuroleadership.com · Ene 2026</span><a class="art-sm-link" href="https://www.neuroleadership.com/articles/from-noise-to-insight-navigating-the-most-critical-leadership-shifts-for-2026" target="_blank">↗</a></div>
+    </div>
+    <div class="art-sm">
+      <div class="art-tag tc-5" id="s5t3">The Decision Lab</div>
+      <div class="art-sm-h" id="s5h3">COM-B: el marco que explica por qué la gente no cambia aunque quiera — y cómo diseñar para que sí lo haga</div>
+      <div class="art-sm-p" id="s5p3">Para que un comportamiento cambie necesitas las tres condiciones: Capacidad, Oportunidad y Motivación. Cuando un cambio organizacional falla, siempre falta al menos una. El COM-B convierte la intuición del coach en un diagnóstico accionable.</div>
+      <div class="art-sm-foot"><span class="art-sm-src">thedecisionlab.com</span><a class="art-sm-link" href="https://thedecisionlab.com/reference-guide/organizational-behavior/the-com-b-model-for-behavior-change" target="_blank">↗</a></div>
+    </div>
+  </div>
+  <div class="refl">
+    <div class="refl-label rl-practica" id="s5rl">Ponlo en práctica</div>
+    <div class="refl-q" id="s5rq">Piensa en el último cambio que tu organización intentó implementar y no se sostuvo — ¿qué faltó: capacidad, oportunidad o motivación real?</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-bar"></div>
+  <div class="footer-signal">Signal</div>
+  <div class="footer-by" id="f-by">by Mentour</div>
+  <div class="footer-text" id="f-text">¿Alguno de estos temas resuena con un reto que estás viviendo en tu organización? Con gusto abrimos una conversación. Sin agenda de venta — solo 20 minutos que pueden cambiar el enfoque.</div>
+  <a class="footer-cta" href="mailto:hola@mentour.co" id="f-cta">hola@mentour.co</a>
+  <div class="footer-links"><a href="https://mentour.co" target="_blank">mentour.co</a></div>
+  <div class="unsub" id="f-unsub">Recibiste Signal porque haces parte de la comunidad Mentour. Para cancelar tu suscripción, responde a este mensaje.</div>
+</div>
+
+</div>
+<script>
+const T={
+es:{ht:"Signal",hs1:"HR Brief by Mentour",hs2:"Ideas que acompañan a quienes lideran personas",hed:"Edición 01 · Junio 2026",hrd:"8 min de lectura",hat:"10 artículos curados",
+il:"Editorial",it:"En Mentour lo vemos en cada organización que acompañamos: el problema rara vez está en la estrategia. Está en la capa que la ejecuta. Esta edición llega con datos que lo confirman a escala global: el engagement cayó a su nivel más bajo desde 2020, y el quiebre no ocurrió en los equipos — ocurrió en los managers. Al mismo tiempo, la IA lleva dos años en las empresas y el 88% de los colaboradores dice que nada ha cambiado en su trabajo. No porque la tecnología falle, sino porque los líderes no han rediseñado cómo trabajan. En Signal buscamos ser más que una fuente de información — queremos ser la pregunta que cambia cómo lideras esta semana.",
+s1n:"Liderazgo y cultura",s2n:"Coaching ejecutivo y de equipos",s3n:"Inteligencia emocional y bienestar",s4n:"HR Tech",s5n:"Behavioral Lab",
+s1t1:"Destacado · Gallup 2026",s1h1:"El engagement global cayó al 20% — y el quiebre está en los managers, no en los equipos",s1p1:"El State of the Global Workplace 2026 de Gallup es contundente: el engagement llegó a su punto más bajo desde 2020 y le cuesta a la economía global $10 billones en productividad perdida. Pero el dato que más debe preocupar a un Director de GH no es el 20% — es que el engagement de los managers cayó de 31% en 2022 a 22% en 2025. Cuando el manager se apaga, el equipo lo siente primero.",s1s1:"Gallup · State of the Global Workplace 2026",s1c1:"Leer más",
+s1t2:"Josh Bersin · Jun 2026",s1h2:"HR 2030: el rol de GH ya no es administrar personas — es orquestar agentes, humanos e IA",s1p2:"Bersin lanzó en Irresistible 2026 su visión HR 2030: en un mundo de Superagentes, GH se convierte en el arquitecto del sistema de trabajo. Las organizaciones que no rediseñen GH en los próximos 3 años quedarán estructuralmente rezagadas.",
+s1t3:"HBR · May-Jun 2026",s1h3:"Cómo construir un superequipo que mejora continuamente — y no se detiene cuando todo va bien",s1p3:"Investigación con miles de equipos revela el patrón de los de alto desempeño: sus líderes fomentan la experimentación incluso cuando las cosas van bien. La curiosidad no es un rasgo — es una práctica deliberada.",
+s1rl:"Reflexiona",s1rq:"¿En tu organización los managers reciben el mismo nivel de inversión en desarrollo que se les pide dar a sus equipos — o les exiges que den lo que nadie les ha dado a ellos?",
+s2t1:"Destacado · Gallup 2026",s2h1:"Cuando un manager tiene a alguien que activamente impulsa su desarrollo, su bienestar salta del 28% al 50%",s2p1:"El dato más revelador del reporte Gallup 2026: el entrenamiento solo lleva el bienestar del manager del 28% al 34%. Pero cuando hay alguien que genuinamente los acompaña en su desarrollo, ese número llega al 50%. El coaching ejecutivo no es un beneficio — es el multiplicador de toda la estrategia de personas.",s2s1:"Gallup · State of the Global Workplace 2026",s2c1:"Leer más",
+s2t2:"Josh Bersin · Feb 2026",s2h2:"El liderazgo se desacopló de la jerarquía — los empleados optan por entrar cada día, no firman una vez",s2p2:"Bersin describe el cambio más profundo en 50 años: ya no puedes decirle a la gente que haga algo y esperar que lo haga. El liderazgo efectivo hoy requiere que las personas elijan seguirte cada día.",
+s2t3:"McKinsey · 2026",s2h3:"Las organizaciones con mejores prácticas de management generan 21 veces más retorno para el accionista",s2p3:"McKinsey confirma: las empresas en el top 25% de prácticas de gestión de personas multiplican su retorno frente a las del bottom 25%. Liderar bien es una ventaja competitiva medible.",
+s2rl:"Ponlo en práctica",s2rq:"Esta semana elige un manager de tu equipo y agenda una conversación de 30 minutos sin agenda fija — solo para preguntarle cómo está, qué lo está frenando y qué necesita de ti. No para dar feedback ni revisar resultados. Solo para acompañar.",
+s3t1:"Destacado · Gallup 2026",s3h1:"Los líderes tienen más estrés, más ira, más tristeza y más soledad que el resto — y casi nadie lo sabe",s3p1:"Gallup 2026 revela una paradoja inquietante: los líderes tienen mayor engagement pero también experimentan más emociones negativas que cualquier otro rol. Más estrés (+7%), más ira (+12%), más tristeza (+11%), más soledad (+10%). La carga emocional del liderazgo es real y está siendo ignorada.",s3s1:"Gallup · State of the Global Workplace 2026",s3c1:"Leer más",
+s3t2:"Susan David · HBR",s3h2:"La agilidad emocional no es ser positivo — es usar las emociones en lugar de ser usado por ellas",s3p2:"Susan David redefine la IE para el liderazgo: no se trata de controlar lo que sientes, sino de detectar, entender y usar esa información para actuar desde tus valores. Los líderes más resilientes no tienen menos emociones — las tienen más presentes.",
+s3t3:"NLI · 2026",s3h3:"La IA sycophant y el ejecutivo abrumado: la tormenta perfecta para el liderazgo tóxico",s3p3:"David Rock alerta: combinar líderes sobrecargados con IAs que les dicen lo que quieren escuchar está creando condiciones para decisiones egocéntricas y cultura tóxica. La autoconsciencia emocional nunca fue tan crítica.",
+s3rl:"Reflexiona",s3rq:"¿Qué emoción estás cargando sola o solo esta semana como líder — y qué pasaría si la nombraras con tu equipo o con alguien de confianza?",
+s4t1:"Destacado · SHRM 2026",s4h1:"Solo el 46% de las organizaciones usa IA en GH — pero el 92% de los CHROs dice que la integración aumentará este año",s4p1:"El State of AI in HR 2026 de SHRM revela la brecha entre intención y realidad. El hallazgo más relevante: la IA tiene 5.7 veces más probabilidad de transformar responsabilidades que de eliminar empleos. El riesgo no es la desaparición de roles — es la obsolescencia de los líderes que no sepan rediseñar cómo trabajan sus equipos.",s4s1:"SHRM · State of AI in HR 2026",s4c1:"Leer más",
+s4t2:"SHRM · Jun 2026",s4h2:"El Congreso de EE.UU. propone la primera ley federal de IA en el trabajo — lo que los líderes de GH necesitan saber",s4p2:"La 'Great American AI Act of 2026' busca crear un marco nacional de gobernanza de IA. Para GH en Colombia y Latam: la señal es clara — la regulación de IA en el trabajo ya no es opcional.",
+s4t3:"NLI · 2026",s4h3:"Los cuatro tipos de usuario de IA — y por qué la fluencia en IA ya es una competencia de liderazgo",s4p3:"El NLI identifica cuatro perfiles: resistores, ambivalentes, usuarios generales y fluentes en IA. Las organizaciones que van a ganar son las que conviertan a sus líderes en fluentes — no en usuarios pasivos.",
+s4rl:"Para conversar con tu equipo",s4rq:"Lleva este mapa a tu próxima reunión de liderazgo: ¿cuántos de tus líderes son resistores, cuántos ambivalentes, cuántos usuarios generales y cuántos fluentes en IA? La conversación que genera esa pregunta es más valiosa que cualquier diagnóstico formal.",
+s5t1:"Destacado · The Decision Lab + Stanford GSB",s5h1:"La estrategia no falla por la idea — falla porque el lunes por la mañana el hábito gana siempre",s5p1:"The Decision Lab lo documenta: cuando una nueva plataforma entra en producción, los mejores colaboradores vuelven al flujo anterior porque es más rápido. La estrategia no falló — el entorno humano ganó. Cambiar cultura es cambiar lo que es fácil, familiar y socialmente seguro.",s5s1:"The Decision Lab · Stanford GSB · 2026",s5c1:"Leer más",
+s5t2:"NLI · Ene 2026",s5h2:"Tres grandes cambios de liderazgo para 2026 vistos desde la neurociencia — y el cerebro que no cambia",s5p2:"El NLI analizó 10.000 fuentes diarias para identificar las señales que realmente importan. La conclusión: el mundo cambia, pero el hardware biológico no. Los líderes que ignoran cómo procesa el cerebro la incertidumbre pierden sus mejores estrategias.",
+s5t3:"The Decision Lab",s5h3:"COM-B: el marco que explica por qué la gente no cambia aunque quiera",s5p3:"Para que un comportamiento cambie necesitas Capacidad, Oportunidad y Motivación. Cuando un cambio organizacional falla, siempre falta al menos una. El COM-B convierte la intuición del coach en un diagnóstico accionable.",
+s5rl:"Ponlo en práctica",s5rq:"¿Piensa en el último cambio que tu organización intentó implementar y no se sostuvo — qué faltó: capacidad, oportunidad o motivación real?",
+fby:"by Mentour",ft:"¿Alguno de estos temas resuena con un reto que estás viviendo en tu organización? Con gusto abrimos una conversación. Sin agenda de venta — solo 20 minutos que pueden cambiar el enfoque.",fc:"hola@mentour.co",fu:"Recibiste Signal porque haces parte de la comunidad Mentour. Para cancelar tu suscripción, responde a este mensaje."},
+en:{ht:"Signal",hs1:"HR Brief by Mentour",hs2:"Ideas that accompany those who lead people",hed:"Issue 01 · June 2026",hrd:"8 min read",hat:"10 curated articles",
+il:"Editor's note",it:"At Mentour, we see it in every organization we work with: the problem is rarely the strategy. It's the layer that executes it. This edition arrives with data that confirms it at global scale: engagement fell to its lowest level since 2020, and the breakdown didn't happen in teams — it happened in managers. Meanwhile, AI has been in companies for two years and 88% of employees say nothing has changed in how they work. Not because the technology fails, but because leaders haven't redesigned how their teams operate. In Signal, we aim to be more than an information source — we want to be the question that changes how you lead this week.",
+s1n:"Leadership & culture",s2n:"Executive & team coaching",s3n:"Emotional intelligence & wellbeing",s4n:"HR Tech",s5n:"Behavioral Lab",
+s1t1:"Featured · Gallup 2026",s1h1:"Global engagement fell to 20% — and the breakdown is in managers, not teams",s1p1:"Gallup's State of the Global Workplace 2026 is unequivocal: engagement hit its lowest point since 2020, costing the global economy $10 trillion in lost productivity. The number that should concern HR leaders most isn't the 20% — it's that manager engagement dropped from 31% in 2022 to 22% in 2025. When the manager disengages, the team feels it first.",s1s1:"Gallup · State of the Global Workplace 2026",s1c1:"Read more",
+s1t2:"Josh Bersin · Jun 2026",s1h2:"HR 2030: the role of HR is no longer managing people — it's orchestrating agents, humans and AI",s1p2:"Bersin launched his HR 2030 vision at Irresistible 2026: in a world of Superagents, HR becomes the architect of the work system. Organizations that don't redesign HR in the next 3 years will be structurally left behind.",
+s1t3:"HBR · May-Jun 2026",s1h3:"How to build a superteam that keeps getting better — even when things are going well",s1p3:"Research across thousands of teams reveals the pattern of high performers: their leaders encourage experimentation even when things are going well. Curiosity isn't a personality trait — it's a deliberate practice that can be trained.",
+s1rl:"Reflect",s1rq:"In your organization, do managers receive the same level of investment in their development that they're asked to give their teams — or are you demanding they give what no one has given them?",
+s2t1:"Featured · Gallup 2026",s2h1:"When a manager has someone who actively supports their development, their wellbeing jumps from 28% to 50%",s2p1:"The most revealing finding in Gallup 2026: training alone moves manager wellbeing from 28% to 34%. But when someone genuinely accompanies their development, that number reaches 50%. Executive coaching isn't a benefit — it's the multiplier of your entire people strategy.",s2s1:"Gallup · State of the Global Workplace 2026",s2c1:"Read more",
+s2t2:"Josh Bersin · Feb 2026",s2h2:"Leadership decoupled from hierarchy — employees opt in every day, they don't sign once",s2p2:"Bersin describes the most profound shift in 50 years: you can no longer tell people what to do and expect them to do it. Effective leadership today requires people to choose to follow you every day.",
+s2t3:"McKinsey · 2026",s2h3:"Organizations with top management practices generate 21x more shareholder return",s2p3:"McKinsey confirms: companies in the top 25% of people management practices multiply their returns against those in the bottom 25%. Leading well is a measurable competitive advantage.",
+s2rl:"Put it into practice",s2rq:"This week, choose one manager on your team and schedule a 30-minute conversation with no fixed agenda — just to ask how they're doing, what's holding them back, and what they need from you. Not to give feedback or review results. Just to be present.",
+s3t1:"Featured · Gallup 2026",s3h1:"Leaders experience more stress, anger, sadness and loneliness than everyone else — and almost no one knows it",s3p1:"Gallup 2026 reveals a troubling paradox: leaders have higher engagement but also experience more negative emotions than any other role. More stress (+7%), more anger (+12%), more sadness (+11%), more loneliness (+10%). The emotional load of leadership is real, silent, and being completely ignored by most wellbeing strategies.",s3s1:"Gallup · State of the Global Workplace 2026",s3c1:"Read more",
+s3t2:"Susan David · HBR",s3h2:"Emotional agility isn't about being positive — it's about using emotions instead of being used by them",s3p2:"Susan David redefines EI for leadership: it's not about controlling what you feel, but detecting, understanding and using that information to act from your values. The most resilient leaders don't have fewer emotions — they have them more present.",
+s3t3:"NLI · 2026",s3h3:"The sycophant AI and the overwhelmed executive: the perfect storm for toxic leadership",s3p3:"David Rock warns: combining overwhelmed leaders with AIs that tell them what they want to hear is creating conditions for self-absorbed decisions and toxic culture. Emotional self-awareness has never been more critical.",
+s3rl:"Reflect",s3rq:"What emotion are you carrying alone this week as a leader — and what would happen if you named it with your team or someone you trust?",
+s4t1:"Featured · SHRM 2026",s4h1:"Only 46% of organizations use AI in HR — but 92% of CHROs say integration will increase this year",s4p1:"SHRM's State of AI in HR 2026 reveals the gap between intention and reality. The most relevant finding: AI is 5.7 times more likely to shift job responsibilities than to eliminate jobs. The risk isn't role disappearance — it's the obsolescence of leaders who can't redesign how their teams work.",s4s1:"SHRM · State of AI in HR 2026",s4c1:"Read more",
+s4t2:"SHRM · Jun 2026",s4h2:"The US Congress proposes the first federal AI workplace law — what HR leaders need to know",s4p2:"The 'Great American AI Act of 2026' seeks to create a national AI governance framework. For HR in Colombia and Latam: the signal is clear — AI governance at work is no longer optional.",
+s4t3:"NLI · 2026",s4h3:"The four types of AI users — and why AI fluency is now a leadership competency",s4p3:"NLI identifies four profiles: resistors, ambivalent, general users, and AI fluent. The organizations that will win are those that develop AI-fluent leaders — not passive users. That's a development challenge, not a technology challenge.",
+s4rl:"Bring this to your team",s4rq:"Bring this map to your next leadership meeting: how many of your leaders are resistors, ambivalent, general users, and AI fluent? The conversation that question generates is more valuable than any formal assessment.",
+s5t1:"Featured · The Decision Lab + Stanford GSB",s5h1:"Strategy doesn't fail because of the idea — it fails because Monday morning the habit always wins",s5p1:"The Decision Lab documents it: when a new platform goes live, top performers slide back to the old workflow because it's faster when the phone is ringing. The strategy didn't fail — the human environment won. Changing culture means changing what is easy, familiar and socially safe.",s5s1:"The Decision Lab · Stanford GSB · 2026",s5c1:"Read more",
+s5t2:"NLI · Jan 2026",s5h2:"Three critical leadership shifts for 2026 through a neuroscience lens — and the brain that doesn't change",s5p2:"NLI analyzed 10,000 daily sources to identify the signals that really matter. The conclusion: the world changes, but our biological hardware doesn't. Leaders who ignore how the brain processes uncertainty lose their best strategies.",
+s5t3:"The Decision Lab",s5h3:"COM-B: the framework that explains why people don't change even when they want to",s5p3:"For behavior to change you need three conditions: Capability, Opportunity and Motivation. When organizational change fails, at least one is always missing. COM-B turns a coach's intuition into an actionable diagnosis.",
+s5rl:"Put it into practice",s5rq:"Think about the last change your organization tried to implement that didn't stick — what was missing: capability, opportunity, or real motivation?",
+fby:"by Mentour",ft:"Is there a topic in this Signal that resonates with a challenge in your organization? We'd love to open a conversation. No sales agenda — just 20 minutes that might shift your perspective.",fc:"hello@mentour.co",fu:"You received Signal because you're part of the Mentour community. To unsubscribe, reply to this message."}
+};
+function setLang(l){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  const t=T[l];
+  const m={'h-title':'ht','h-sub1':'hs1','h-sub2':'hs2','h-ed':'hed','h-read':'hrd','h-art':'hat','i-label':'il','i-text':'it',
+    's1n':'s1n','s1t1':'s1t1','s1h1':'s1h1','s1p1':'s1p1','s1s1':'s1s1','s1c1':'s1c1','s1t2':'s1t2','s1h2':'s1h2','s1p2':'s1p2','s1t3':'s1t3','s1h3':'s1h3','s1p3':'s1p3','s1rl':'s1rl','s1rq':'s1rq',
+    's2n':'s2n','s2t1':'s2t1','s2h1':'s2h1','s2p1':'s2p1','s2s1':'s2s1','s2c1':'s2c1','s2t2':'s2t2','s2h2':'s2h2','s2p2':'s2p2','s2t3':'s2t3','s2h3':'s2h3','s2p3':'s2p3','s2rl':'s2rl','s2rq':'s2rq',
+    's3n':'s3n','s3t1':'s3t1','s3h1':'s3h1','s3p1':'s3p1','s3s1':'s3s1','s3c1':'s3c1','s3t2':'s3t2','s3h2':'s3h2','s3p2':'s3p2','s3t3':'s3t3','s3h3':'s3h3','s3p3':'s3p3','s3rl':'s3rl','s3rq':'s3rq',
+    's4n':'s4n','s4t1':'s4t1','s4h1':'s4h1','s4p1':'s4p1','s4s1':'s4s1','s4c1':'s4c1','s4t2':'s4t2','s4h2':'s4h2','s4p2':'s4p2','s4t3':'s4t3','s4h3':'s4h3','s4p3':'s4p3','s4rl':'s4rl','s4rq':'s4rq',
+    's5n':'s5n','s5t1':'s5t1','s5h1':'s5h1','s5p1':'s5p1','s5s1':'s5s1','s5c1':'s5c1','s5t2':'s5t2','s5h2':'s5h2','s5p2':'s5p2','s5t3':'s5t3','s5h3':'s5h3','s5p3':'s5p3','s5rl':'s5rl','s5rq':'s5rq',
+    'f-by':'fby','f-text':'ft','f-cta':'fc','f-unsub':'fu'};
+  Object.keys(m).forEach(id=>{const el=document.getElementById(id);if(el&&t[m[id]])el.textContent=t[m[id]];});
+  const cta=document.getElementById('f-cta');
+  if(cta)cta.href='mailto:'+(l==='en'?'hello':'hola')+'@mentour.co';
+}
+</script>
+</body>
+</html>
